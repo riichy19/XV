@@ -1,0 +1,155 @@
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+@keyframes glowEffect {
+    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(0, 0, 0, 0.7); }
+    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.5); }
+}
+@keyframes brillo {
+    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+body {
+    background: linear-gradient(45deg, #000, #fff);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s infinite alternate;
+    color: white;
+    text-align: center;
+}
+.card, .extra-info {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    width: 350px;
+    color: black;
+    margin-bottom: 20px;
+    animation: glowEffect 2s infinite alternate;
+    transition: all 0.3s ease-in-out;
+    animation: brillo 3s infinite alternate;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    width: 350px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 125px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid black;
+    margin-bottom: 10px;
+}
+
+.inglesia {
+    width: 125px;
+    height: 150px;
+    border-radius: 13%;
+    object-fit: cover;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.musicPlay {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.whats {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.galerias{
+    width: 160px;
+    height: 167px;
+    border-radius: 16%;
+    object-fit: cover;
+    border: 3px solid black;
+    margin-bottom: 35px;
+}
+
+.music-btn {
+    background: black;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.music-btn::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-out;
+}
+
+.music-btn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.music-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding-bottom: 30px;
+}
+
+.extra-info {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Clases para animación al hacer scroll */
+.extra-info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2, h3, p {
+    font-family: 'Dancing Script', cursive;
+}
+.galerias {
+    transition: transform 0.3s ease-in-out;
+}
+
+.galerias:hover {
+    transform: scale(1.1);
+}
